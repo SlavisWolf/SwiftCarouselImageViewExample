@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CarouselCell" customModule="SwiftCarouselImageViewExample" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="378" height="180"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="378" height="180"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MT5-Qm-azn">
+                        <rect key="frame" x="0.0" y="0.0" width="378" height="180"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fondo_defecto" translatesAutoresizingMaskIntoConstraints="NO" id="Aud-Er-Ix3">
+                                <rect key="frame" x="0.0" y="0.0" width="378" height="180"/>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bonito atardecer en el campo" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJD-cQ-0Vt">
+                                <rect key="frame" x="16" y="139" width="253.5" height="25"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.26797945205479451" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="1" height="-1"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😍" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRb-39-Qd2">
+                                <rect key="frame" x="339" y="8" width="23" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="dJD-cQ-0Vt" firstAttribute="bottom" secondItem="Aud-Er-Ix3" secondAttribute="bottom" constant="-16" id="2PQ-f6-bNk"/>
+                            <constraint firstItem="fRb-39-Qd2" firstAttribute="trailing" secondItem="Aud-Er-Ix3" secondAttribute="trailing" constant="-16" id="7b3-n6-X6g"/>
+                            <constraint firstItem="dJD-cQ-0Vt" firstAttribute="leading" secondItem="Aud-Er-Ix3" secondAttribute="leading" constant="16" id="Ya0-Xi-Hgo"/>
+                            <constraint firstItem="Aud-Er-Ix3" firstAttribute="top" secondItem="MT5-Qm-azn" secondAttribute="top" id="dsq-QF-Ydg"/>
+                            <constraint firstAttribute="bottom" secondItem="Aud-Er-Ix3" secondAttribute="bottom" id="gW2-0E-70U"/>
+                            <constraint firstAttribute="trailing" secondItem="Aud-Er-Ix3" secondAttribute="trailing" id="hj5-Di-oFF"/>
+                            <constraint firstItem="Aud-Er-Ix3" firstAttribute="leading" secondItem="MT5-Qm-azn" secondAttribute="leading" id="p4f-3A-xty"/>
+                            <constraint firstItem="fRb-39-Qd2" firstAttribute="top" secondItem="Aud-Er-Ix3" secondAttribute="top" constant="8" id="uSq-AH-d8M"/>
+                        </constraints>
+                        <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="MT5-Qm-azn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="HmZ-JI-87k"/>
+                <constraint firstItem="MT5-Qm-azn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="IIW-Dk-KnS"/>
+                <constraint firstAttribute="bottom" secondItem="MT5-Qm-azn" secondAttribute="bottom" id="K6T-jX-ZOg"/>
+                <constraint firstAttribute="trailing" secondItem="MT5-Qm-azn" secondAttribute="trailing" id="aw6-Nc-KdW"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="emogiLabel" destination="fRb-39-Qd2" id="eKZ-66-1f2"/>
+                <outlet property="footLabel" destination="dJD-cQ-0Vt" id="Adi-BG-NoV"/>
+                <outlet property="imageView" destination="Aud-Er-Ix3" id="Bnb-cu-Dal"/>
+            </connections>
+            <point key="canvasLocation" x="141" y="154"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="fondo_defecto" width="1920" height="1280"/>
+    </resources>
+</document>
