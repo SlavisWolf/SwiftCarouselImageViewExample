@@ -10,8 +10,9 @@ import UIKit
 
 class MainViewController: UIViewController,
                                     UICollectionViewDataSource,
-UICollectionViewDelegateFlowLayout {
-
+                                    UICollectionViewDataSourcePrefetching,
+                                    UICollectionViewDelegateFlowLayout {
+    
     
     @IBOutlet weak var carouselView: UICollectionView!
     @IBOutlet weak var selectedItemLabel: UILabel!
@@ -46,6 +47,8 @@ UICollectionViewDelegateFlowLayout {
         
         carouselView.delegate = self
         carouselView.dataSource = self
+        carouselView.prefetchDataSource = self
+        carouselView.isPrefetchingEnabled = true
     
         
         carouselView.register(UINib(nibName: "CarouselCell", bundle: nil), forCellWithReuseIdentifier: carouselCellIdentifier)
@@ -84,12 +87,23 @@ UICollectionViewDelegateFlowLayout {
         
         let cell : CarouselCell = collectionView.dequeueReusableCell(withReuseIdentifier: carouselCellIdentifier, for: indexPath) as! CarouselCell
         cell.model = modelList[indexPath.row]
-        cell.configureCell()
         return cell
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
+    }
+    
+    // MARK: UICollectionViewDataSourcePrefetching
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        for indexPath in indexPaths {
+            var model = modelList[indexPath.row]
+            if(model.image == nil) {
+                ImageDownloader.downloadImage(imageUrl: model.imageUrl) { (imageDownloaded) in
+                    model.image = imageDownloaded
+                }
+            }
+        }
     }
     
     // MARK: UICollectionViewDelegateFlowLayout

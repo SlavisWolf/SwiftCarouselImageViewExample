@@ -13,6 +13,7 @@
 		93340502238D5D020058B5C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93340500238D5D020058B5C6 /* Main.storyboard */; };
 		93340504238D5D050058B5C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93340503238D5D050058B5C6 /* Assets.xcassets */; };
 		93340507238D5D050058B5C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93340505238D5D050058B5C6 /* LaunchScreen.storyboard */; };
+		937ACC36238ECDCE0024AD24 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937ACC35238ECDCE0024AD24 /* ImageDownloader.swift */; };
 		93F9E281238D773A001834EF /* CarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F9E27F238D773A001834EF /* CarouselCell.swift */; };
 		93F9E282238D773A001834EF /* CarouselCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93F9E280238D773A001834EF /* CarouselCell.xib */; };
 		93F9E284238D80B4001834EF /* CarouselElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F9E283238D80B4001834EF /* CarouselElement.swift */; };
@@ -27,6 +28,7 @@
 		93340503238D5D050058B5C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93340506238D5D050058B5C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93340508238D5D050058B5C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		937ACC35238ECDCE0024AD24 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		93F9E27F238D773A001834EF /* CarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCell.swift; sourceTree = "<group>"; };
 		93F9E280238D773A001834EF /* CarouselCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarouselCell.xib; sourceTree = "<group>"; };
 		93F9E283238D80B4001834EF /* CarouselElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselElement.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 		933404F9238D5D020058B5C6 /* SwiftCarouselImageViewExample */ = {
 			isa = PBXGroup;
 			children = (
+				937ACC37238ECDD40024AD24 /* Utils */,
 				93F9E27E238D768E001834EF /* Views */,
 				93F9E27D238D767C001834EF /* Model */,
 				933404FA238D5D020058B5C6 /* AppDelegate.swift */,
@@ -72,6 +75,14 @@
 				93340508238D5D050058B5C6 /* Info.plist */,
 			);
 			path = SwiftCarouselImageViewExample;
+			sourceTree = "<group>";
+		};
+		937ACC37238ECDD40024AD24 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				937ACC35238ECDCE0024AD24 /* ImageDownloader.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		93F9E27D238D767C001834EF /* Model */ = {
@@ -168,6 +179,7 @@
 				93F9E284238D80B4001834EF /* CarouselElement.swift in Sources */,
 				933404FB238D5D020058B5C6 /* AppDelegate.swift in Sources */,
 				933404FD238D5D020058B5C6 /* SceneDelegate.swift in Sources */,
+				937ACC36238ECDCE0024AD24 /* ImageDownloader.swift in Sources */,
 				93F9E281238D773A001834EF /* CarouselCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

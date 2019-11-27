@@ -19,6 +19,9 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MT5-Qm-azn">
                         <rect key="frame" x="0.0" y="0.0" width="378" height="180"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="aXL-w7-Svd">
+                                <rect key="frame" x="170.5" y="71.5" width="37" height="37"/>
+                            </activityIndicatorView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fondo_defecto" translatesAutoresizingMaskIntoConstraints="NO" id="Aud-Er-Ix3">
                                 <rect key="frame" x="0.0" y="0.0" width="378" height="180"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -39,16 +42,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="dJD-cQ-0Vt" firstAttribute="bottom" secondItem="Aud-Er-Ix3" secondAttribute="bottom" constant="-16" id="2PQ-f6-bNk"/>
                             <constraint firstItem="fRb-39-Qd2" firstAttribute="trailing" secondItem="Aud-Er-Ix3" secondAttribute="trailing" constant="-16" id="7b3-n6-X6g"/>
+                            <constraint firstItem="aXL-w7-Svd" firstAttribute="centerX" secondItem="MT5-Qm-azn" secondAttribute="centerX" id="9Of-Ia-6xA"/>
                             <constraint firstItem="dJD-cQ-0Vt" firstAttribute="leading" secondItem="Aud-Er-Ix3" secondAttribute="leading" constant="16" id="Ya0-Xi-Hgo"/>
                             <constraint firstItem="Aud-Er-Ix3" firstAttribute="top" secondItem="MT5-Qm-azn" secondAttribute="top" id="dsq-QF-Ydg"/>
                             <constraint firstAttribute="bottom" secondItem="Aud-Er-Ix3" secondAttribute="bottom" id="gW2-0E-70U"/>
                             <constraint firstAttribute="trailing" secondItem="Aud-Er-Ix3" secondAttribute="trailing" id="hj5-Di-oFF"/>
                             <constraint firstItem="Aud-Er-Ix3" firstAttribute="leading" secondItem="MT5-Qm-azn" secondAttribute="leading" id="p4f-3A-xty"/>
                             <constraint firstItem="fRb-39-Qd2" firstAttribute="top" secondItem="Aud-Er-Ix3" secondAttribute="top" constant="8" id="uSq-AH-d8M"/>
+                            <constraint firstItem="aXL-w7-Svd" firstAttribute="centerY" secondItem="MT5-Qm-azn" secondAttribute="centerY" id="ybv-vC-z7L"/>
                         </constraints>
                         <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                     </view>
@@ -63,6 +67,7 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
+                <outlet property="activityIndicator" destination="aXL-w7-Svd" id="XH3-VZ-iYE"/>
                 <outlet property="emogiView" destination="fRb-39-Qd2" id="14I-dT-cji"/>
                 <outlet property="footLabel" destination="dJD-cQ-0Vt" id="Gja-ja-WsU"/>
                 <outlet property="imageView" destination="Aud-Er-Ix3" id="lf8-mW-Iof"/>
