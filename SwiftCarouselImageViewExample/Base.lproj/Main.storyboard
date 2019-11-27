@@ -45,8 +45,13 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="28K-dV-Ytx">
+                                <rect key="frame" x="185.5" y="322.5" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <color key="currentPageIndicatorTintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="laJ-mx-EUh">
-                                <rect key="frame" x="16" y="340.5" width="382" height="30"/>
+                                <rect key="frame" x="16" y="375.5" width="382" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPm-Xv-1AA">
                                         <rect key="frame" x="0.0" y="0.0" width="74" height="30"/>
@@ -67,30 +72,53 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No item has been selected" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ag-ZR-fhl">
-                                <rect key="frame" x="16" y="396.5" width="382" height="20.5"/>
+                                <rect key="frame" x="16" y="431.5" width="382" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ipZ-1B-Ptj">
+                                <rect key="frame" x="16" y="807" width="382" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carousel automatic change the image" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezH-Fj-Q4v">
+                                        <rect key="frame" x="0.0" y="5.5" width="323" height="20.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="BmB-cr-1Pf">
+                                        <rect key="frame" x="333" y="0.0" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="carouselSwitchTimerAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="z5J-JL-wZe"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="laJ-mx-EUh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="5dm-wr-KzI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="laJ-mx-EUh" secondAttribute="trailing" constant="16" id="5ni-jR-I09"/>
-                            <constraint firstItem="laJ-mx-EUh" firstAttribute="top" secondItem="t5F-J5-B9h" secondAttribute="bottom" constant="26" id="8bv-fC-Ryt"/>
                             <constraint firstItem="KwK-vb-wBi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="NrI-oi-4Zw"/>
+                            <constraint firstItem="ipZ-1B-Ptj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="OTP-U8-aOy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="t5F-J5-B9h" secondAttribute="trailing" constant="20" id="OUA-ov-0ta"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KwK-vb-wBi" secondAttribute="trailing" constant="16" id="Oio-iO-Xic"/>
+                            <constraint firstItem="laJ-mx-EUh" firstAttribute="top" secondItem="28K-dV-Ytx" secondAttribute="bottom" constant="16" id="Sx7-6G-r2y"/>
                             <constraint firstItem="t5F-J5-B9h" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Vb9-SG-B3Q"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ipZ-1B-Ptj" secondAttribute="bottom" constant="24" id="ZRd-l7-f0D"/>
                             <constraint firstItem="4Ag-ZR-fhl" firstAttribute="top" secondItem="laJ-mx-EUh" secondAttribute="bottom" constant="26" id="eN3-k2-gyC"/>
                             <constraint firstItem="4Ag-ZR-fhl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="gwh-A3-Evf"/>
+                            <constraint firstItem="28K-dV-Ytx" firstAttribute="centerX" secondItem="t5F-J5-B9h" secondAttribute="centerX" id="hsP-b4-niN"/>
                             <constraint firstItem="t5F-J5-B9h" firstAttribute="top" secondItem="KwK-vb-wBi" secondAttribute="bottom" constant="46" id="oR7-Zc-hsK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4Ag-ZR-fhl" secondAttribute="trailing" constant="16" id="pAd-5o-4N8"/>
+                            <constraint firstItem="28K-dV-Ytx" firstAttribute="top" secondItem="t5F-J5-B9h" secondAttribute="bottom" constant="8" id="qhe-WZ-pmW"/>
                             <constraint firstItem="KwK-vb-wBi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="qjD-mL-ePk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ipZ-1B-Ptj" secondAttribute="trailing" constant="16" id="qjt-lM-qPE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="carouselPageControl" destination="28K-dV-Ytx" id="ZcU-ep-Azn"/>
                         <outlet property="carouselView" destination="t5F-J5-B9h" id="PtR-JG-gIh"/>
                         <outlet property="selectedItemLabel" destination="4Ag-ZR-fhl" id="JS2-GQ-G32"/>
                     </connections>

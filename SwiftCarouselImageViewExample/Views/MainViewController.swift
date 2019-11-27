@@ -10,20 +10,24 @@ import UIKit
 
 class MainViewController: UIViewController,
                                     UICollectionViewDataSource,
-                                    UICollectionViewDelegateFlowLayout {
-    
-    
+UICollectionViewDelegateFlowLayout {
+
     
     @IBOutlet weak var carouselView: UICollectionView!
     @IBOutlet weak var selectedItemLabel: UILabel!
+    @IBOutlet weak var carouselPageControl: UIPageControl!
+    
     
     
     var modelList = CarouselElement.createListOfObjects()
+    var carouselTimer : Timer?
+    
     fileprivate let carouselCellIdentifier = "carouselCellId"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCarousel()
+        configureCarouselPageControl()
     }
     
     fileprivate func configureCarousel() {
@@ -47,12 +51,27 @@ class MainViewController: UIViewController,
         carouselView.register(UINib(nibName: "CarouselCell", bundle: nil), forCellWithReuseIdentifier: carouselCellIdentifier)
     }
     
+    fileprivate func configureCarouselPageControl() {
+        carouselPageControl.numberOfPages = modelList.count
+        carouselPageControl.currentPage = 0
+    }
+    
     
     // MARK: UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let model = modelList[indexPath.row]
         selectedItemLabel.text = model.label + " " + model.emogi
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+        for currenCell : UICollectionViewCell in carouselView.visibleCells {
+            let currentCellIndexPath = carouselView.indexPath(for: currenCell)
+            if(currentCellIndexPath != indexPath) {
+                carouselPageControl.currentPage = currentCellIndexPath?.row ?? 0
+            }
+        }
     }
 
     // MARK: UICollectionViewDataSource
@@ -85,8 +104,36 @@ class MainViewController: UIViewController,
     @IBAction func defaultListButtonAction() {
         changeModelList(CarouselElement.createListOfObjects() )
     }
+    
     @IBAction func alternativeListButtonAction() {
         changeModelList(CarouselElement.createListOfObjects_Alt() )
+    }
+    
+    @IBAction func carouselSwitchTimerAction(_ sender: UISwitch) {
+        
+        if(sender.isOn) {
+            carouselTimer = Timer.scheduledTimer(timeInterval: 5.0,
+                                                 target: self,
+                                                 selector: #selector(carouselTimerNextImage),
+                                                 userInfo: nil,
+                                                 repeats: true)
+        }
+        else {
+            carouselTimer?.invalidate()
+            carouselTimer = nil
+        }
+            
+    }
+    
+    // MARK: Timer Functions
+    
+     @objc fileprivate func carouselTimerNextImage() {
+        var newIndex = carouselPageControl.currentPage + 1
+        if(newIndex >= modelList.count) {
+            newIndex = 0
+        }
+        carouselView.scrollToItem(at: IndexPath(item: newIndex, section: 0), at: .centeredHorizontally, animated: true)
+        //carouselPageControl.currentPage = newIndex
     }
     
     // MARK: Others
@@ -94,6 +141,8 @@ class MainViewController: UIViewController,
     fileprivate func changeModelList(_ modelList: Array<CarouselElement>) {
         self.modelList = modelList
         carouselView.reloadData()
+        carouselPageControl.numberOfPages = modelList.count
+        carouselView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
     }
     
 }
