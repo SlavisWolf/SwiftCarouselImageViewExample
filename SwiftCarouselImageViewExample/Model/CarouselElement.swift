@@ -30,11 +30,31 @@ struct CarouselElement {
             
             CarouselElement(label: "Pájaro feliz",
                             emogi: "😊",
-                            imageUrl: "http://wallpaper-gallery.net/single/hd-birds-wallpapers/hd-birds-wallpapers-19.html"),
+                            imageUrl: "https://www.pixelstalk.net/wp-content/uploads/2016/04/Bird-wallpapers-HD-for-desktop-620x349.jpg"),
             
             CarouselElement(label: "Atardecer agradable",
                             emogi: "😌",
                             imageUrl: "BAD IMAGE")
         ]
     }
+    
+    static func createListOfObjects_Alt() -> Array<CarouselElement> {
+        return  [
+            CarouselElement(label: "Diosa de los mares",
+                            emogi: "😍",
+                            imageUrl: "https://www.wallpapers13.com/wp-content/uploads/2015/11/Beautiful-Dreaming-Fantasy-Girl-Artwork-Wallpaper-915x515.jpg"),
+            
+            CarouselElement(label: "Fresitas ricas" ,
+                            emogi: "😋",
+                            imageUrl: "https://pbs.twimg.com/media/Dd-251fV0AEInKq.jpg:large"),
+            
+            CarouselElement(label: "Lo más Kawai del universo",
+                            emogi: "😻",
+                            imageUrl: "https://www.desktopbackground.org/p/2014/08/20/812273_beautiful-wallpapers-for-facebook-500-collection-hd-wallpapers_1440x900_h.jpg"),
+        ]
+    }
 }
+
+//https://www.wallpapers13.com/wp-content/uploads/2015/11/Beautiful-Dreaming-Fantasy-Girl-Artwork-Wallpaper-915x515.jpg
+//https://pbs.twimg.com/media/Dd-251fV0AEInKq.jpg:large
+//https://www.desktopbackground.org/p/2014/08/20/812273_beautiful-wallpapers-for-facebook-500-collection-hd-wallpapers_1440x900_h.jpg

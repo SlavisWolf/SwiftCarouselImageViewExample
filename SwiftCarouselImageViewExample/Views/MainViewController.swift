@@ -14,12 +14,11 @@ class MainViewController: UIViewController,
     
     
     
-    
-
-    
     @IBOutlet weak var carouselView: UICollectionView!
+    @IBOutlet weak var selectedItemLabel: UILabel!
     
-    let modelList = CarouselElement.createListOfObjects()
+    
+    var modelList = CarouselElement.createListOfObjects()
     fileprivate let carouselCellIdentifier = "carouselCellId"
     
     override func viewDidLoad() {
@@ -29,15 +28,32 @@ class MainViewController: UIViewController,
     
     fileprivate func configureCarousel() {
         
+        // We can do this also in the xib file, but here es more visible
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .horizontal
+        flowLayout.minimumLineSpacing = 0
+        flowLayout.minimumInteritemSpacing = 0
+
+        carouselView.collectionViewLayout = flowLayout
+        carouselView.showsHorizontalScrollIndicator = false
+        carouselView.showsVerticalScrollIndicator = false
+        carouselView.isPagingEnabled = true
         carouselView.allowsMultipleSelection = false
+        
         carouselView.delegate = self
         carouselView.dataSource = self
-        carouselView.register(CarouselCell.self, forCellWithReuseIdentifier: carouselCellIdentifier)
-//        carouselView.register(UINib(nibName: "CarouselCell.xib", bundle: nil), forCellWithReuseIdentifier: carouselCellIdentifier)
+    
+        
+        carouselView.register(UINib(nibName: "CarouselCell", bundle: nil), forCellWithReuseIdentifier: carouselCellIdentifier)
     }
     
     
     // MARK: UICollectionViewDelegate
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let model = modelList[indexPath.row]
+        selectedItemLabel.text = model.label + " " + model.emogi
+    }
 
     // MARK: UICollectionViewDataSource
     
@@ -62,6 +78,23 @@ class MainViewController: UIViewController,
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return collectionView.bounds.size
     }
-
+    
+    // MARK: Actions
+    
+    
+    @IBAction func defaultListButtonAction() {
+        changeModelList(CarouselElement.createListOfObjects() )
+    }
+    @IBAction func alternativeListButtonAction() {
+        changeModelList(CarouselElement.createListOfObjects_Alt() )
+    }
+    
+    // MARK: Others
+    
+    fileprivate func changeModelList(_ modelList: Array<CarouselElement>) {
+        self.modelList = modelList
+        carouselView.reloadData()
+    }
+    
 }
 

@@ -22,13 +22,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="t5F-J5-B9h">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="t5F-J5-B9h">
                                 <rect key="frame" x="16" y="134.5" width="378" height="180"/>
-                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="fhw-X0-0l1"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Em0-zc-dit">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Em0-zc-dit">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -45,20 +45,54 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="laJ-mx-EUh">
+                                <rect key="frame" x="16" y="340.5" width="382" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPm-Xv-1AA">
+                                        <rect key="frame" x="0.0" y="0.0" width="74" height="30"/>
+                                        <state key="normal" title="Default list"/>
+                                        <connections>
+                                            <action selector="defaultListButtonAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Wo-3M-oGB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nC9-dQ-Cyj">
+                                        <rect key="frame" x="284" y="0.0" width="98" height="30"/>
+                                        <state key="normal" title="Alternative list">
+                                            <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="alternativeListButtonAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="aaK-cI-HlT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No item has been selected" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ag-ZR-fhl">
+                                <rect key="frame" x="16" y="396.5" width="382" height="20.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="laJ-mx-EUh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="5dm-wr-KzI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="laJ-mx-EUh" secondAttribute="trailing" constant="16" id="5ni-jR-I09"/>
+                            <constraint firstItem="laJ-mx-EUh" firstAttribute="top" secondItem="t5F-J5-B9h" secondAttribute="bottom" constant="26" id="8bv-fC-Ryt"/>
                             <constraint firstItem="KwK-vb-wBi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="NrI-oi-4Zw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="t5F-J5-B9h" secondAttribute="trailing" constant="20" id="OUA-ov-0ta"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KwK-vb-wBi" secondAttribute="trailing" constant="16" id="Oio-iO-Xic"/>
                             <constraint firstItem="t5F-J5-B9h" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Vb9-SG-B3Q"/>
+                            <constraint firstItem="4Ag-ZR-fhl" firstAttribute="top" secondItem="laJ-mx-EUh" secondAttribute="bottom" constant="26" id="eN3-k2-gyC"/>
+                            <constraint firstItem="4Ag-ZR-fhl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="gwh-A3-Evf"/>
                             <constraint firstItem="t5F-J5-B9h" firstAttribute="top" secondItem="KwK-vb-wBi" secondAttribute="bottom" constant="46" id="oR7-Zc-hsK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4Ag-ZR-fhl" secondAttribute="trailing" constant="16" id="pAd-5o-4N8"/>
                             <constraint firstItem="KwK-vb-wBi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="qjD-mL-ePk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="carouselView" destination="t5F-J5-B9h" id="PtR-JG-gIh"/>
+                        <outlet property="selectedItemLabel" destination="4Ag-ZR-fhl" id="JS2-GQ-G32"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -12,40 +12,59 @@ class CarouselCell: UICollectionViewCell {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var footLabel: UILabel!
-    @IBOutlet weak var emogiLabel: UILabel!
+    @IBOutlet weak var emogiView: UILabel!
+    
     
     var model : CarouselElement?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     func configureCell() {
         footLabel.text = model?.label
-        emogiLabel.text = model?.emogi
+        emogiView.text = model?.emogi
+        downloadImage()
     }
     
+    // MARK:  Image Functions
     fileprivate func downloadImage() {
+        
+        enum ValidationError: Error {
+            case invalidUrl
+        }
         
         let queue = DispatchQueue(label: "imageDownloadQueue")
         
         queue.async {
+            
             let image : UIImage
             do {
-                let url = URL(fileURLWithPath: self.model?.imageUrl ?? "")
-                let imageData = try Data(contentsOf: url)
-                image = UIImage(data: imageData) ?? UIImage(imageLiteralResourceName: "fondo_defecto")
+                
+                guard let url : URL = URL(string: self.model?.imageUrl ?? "") else {
+                    throw ValidationError.invalidUrl
+                }
+
+                let imageData = try Data(contentsOf: url  )
+                image = UIImage(data: imageData) ?? self.defaultValueForImage()
             }
             catch {
-                image = UIImage(imageLiteralResourceName: "fondo_defecto")
-                print("No se ha podido cargar la imagen")
+                image = self.defaultValueForImage()
             }
             
-            DispatchQueue.main.async {
-                self.imageView.image = image
-            }
+            self.loadImageInMainQueue(image)
         }
     }
+    
+    fileprivate func defaultValueForImage () -> UIImage {
+        return UIImage(imageLiteralResourceName: "fondo_defecto")
+    }
+    
+    fileprivate func loadImageInMainQueue (_ image: UIImage) {
+        DispatchQueue.main.async {
+            self.imageView.image = image
+        }
+    }
+    
 
 }

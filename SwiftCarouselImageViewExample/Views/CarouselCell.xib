@@ -21,6 +21,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fondo_defecto" translatesAutoresizingMaskIntoConstraints="NO" id="Aud-Er-Ix3">
                                 <rect key="frame" x="0.0" y="0.0" width="378" height="180"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bonito atardecer en el campo" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJD-cQ-0Vt">
@@ -38,6 +39,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="dJD-cQ-0Vt" firstAttribute="bottom" secondItem="Aud-Er-Ix3" secondAttribute="bottom" constant="-16" id="2PQ-f6-bNk"/>
                             <constraint firstItem="fRb-39-Qd2" firstAttribute="trailing" secondItem="Aud-Er-Ix3" secondAttribute="trailing" constant="-16" id="7b3-n6-X6g"/>
@@ -52,6 +54,7 @@
                     </view>
                 </subviews>
             </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="MT5-Qm-azn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="HmZ-JI-87k"/>
                 <constraint firstItem="MT5-Qm-azn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="IIW-Dk-KnS"/>
@@ -60,9 +63,9 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
-                <outlet property="emogiLabel" destination="fRb-39-Qd2" id="eKZ-66-1f2"/>
-                <outlet property="footLabel" destination="dJD-cQ-0Vt" id="Adi-BG-NoV"/>
-                <outlet property="imageView" destination="Aud-Er-Ix3" id="Bnb-cu-Dal"/>
+                <outlet property="emogiView" destination="fRb-39-Qd2" id="14I-dT-cji"/>
+                <outlet property="footLabel" destination="dJD-cQ-0Vt" id="Gja-ja-WsU"/>
+                <outlet property="imageView" destination="Aud-Er-Ix3" id="lf8-mW-Iof"/>
             </connections>
             <point key="canvasLocation" x="141" y="154"/>
         </collectionViewCell>
